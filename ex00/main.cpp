@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 22:20:57 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/10/27 22:22:54 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/10/30 17:02:58 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	main()
 {
-	
+	ClapTrap a;
+	ClapTrap b;
+
 	return (0);
 }
