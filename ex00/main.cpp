@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 22:20:57 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/11/01 18:33:50 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/01 20:01:05 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	play_fight(ClapTrap& a, ClapTrap& b)
 
 int	main()
 {
-	ClapTrap a("Goku", 4, 4, 2);
-	ClapTrap b("Vegeta", 4, 3, 2);
+	ClapTrap a("Goku");
+	ClapTrap b("Vegeta");
 
 	play_fight(a, b);
 	return (0);

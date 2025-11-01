@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 22:23:48 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/11/01 17:43:19 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/01 20:00:15 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ClapTrap {
 
 	public:
 		ClapTrap();
-		ClapTrap(std::string name, int hit_pts, int energy_pts, int attack_dmg);
+		ClapTrap(std::string name);
 		ClapTrap(ClapTrap& other);
 		ClapTrap& operator=(ClapTrap& other);
 		~ClapTrap();
