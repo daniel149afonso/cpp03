@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 22:23:48 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/11/01 01:15:54 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/01 17:43:19 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ class ClapTrap {
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+  
+		int get_hit_pts();
+		int get_energy_pts();
 };
 
 #endif
