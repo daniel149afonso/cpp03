@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 22:25:22 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/10/30 16:39:33 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/01 01:16:23 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ ClapTrap::ClapTrap(): _name("unknown"), _hit_pts(10), _energy_pts(10), _attack_d
 	std::cout << "Default Constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(int hit_pts, int energy_pts, int attack_dmg)
+ClapTrap::ClapTrap(std::string name, int hit_pts, int energy_pts, int attack_dmg)
 {
+	_name = name;
 	_hit_pts = hit_pts;
 	_energy_pts = energy_pts;
 	_attack_dmg = attack_dmg;
@@ -57,6 +58,8 @@ ClapTrap::~ClapTrap()
 	
 void ClapTrap::attack(const std::string& target)
 {
+	if (_energy_pts <= 0 || _hit_pts <= 0)
+		return ;
 	_energy_pts--;
 	std::cout << "ClapTrap " << _name << " attacks "<< target 
 	<< ", causing " << _attack_dmg << " points of damage!\n";
@@ -64,12 +67,22 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
+	if (_hit_pts <= 0)
+		return ;
 	_hit_pts -= amount;
+	if (_hit_pts <= 0)
+	{
+		_hit_pts = 0;
+		std::cout << "ClapTrap " << _name << " is K.O.\n";
+		return ;
+	}
 	std::cout << "ClapTrap " << _name << " has " << _hit_pts << " hit points!\n";
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	if (_energy_pts <= 0 || _hit_pts <= 0)
+		return ;
 	_hit_pts += amount;
 	_energy_pts--;
 	std::cout << "ClapTrap " << _name << " repairs +" << _hit_pts << " hit points!\n";
