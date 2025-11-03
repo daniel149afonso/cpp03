@@ -7,10 +7,14 @@ CXX         = c++
 CXXFLAGS    = -Wall -Wextra -Werror -std=c++98
 RM          = rm -f
 
-DIR = src/
-SRC         = $(DIR)main.cpp $(DIR)ClapTrap.cpp \
-			$(DIR)ScavTrap.cpp
-OBJ         = $(SRC:.cpp=.o)
+SRC_DIR     = src
+OBJ_DIR     = objs
+
+SRC         = $(SRC_DIR)/main.cpp \
+              $(SRC_DIR)/ClapTrap.cpp \
+              $(SRC_DIR)/ScavTrap.cpp
+
+OBJ         = $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
 # **************************************************************************** #
 #                                   RULES                                      #
@@ -22,12 +26,14 @@ $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 	@echo "✅ Build complete: $(NAME)"
 
-%.o: %.cpp
+# Rule to compile .cpp → .o inside objs/
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
-	@echo "Compiled: $<"
+	@echo "Compiled: $< → $@"
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) -r $(OBJ_DIR)
 	@echo "🧹 Object files removed"
 
 fclean: clean
