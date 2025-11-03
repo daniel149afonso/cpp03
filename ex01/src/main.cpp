@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 22:20:57 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/11/03 18:18:43 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/03 18:25:44 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ void	play_ScavTrap_fight()
 			b.takeDamage(20);
 		}
 		if (i < 2)
+		{
 			b.beRepaired(1);
+			a.guardGate();
+		}
 	}
 	std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
 }

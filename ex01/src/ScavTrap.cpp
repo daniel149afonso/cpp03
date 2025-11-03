@@ -6,7 +6,7 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 22:25:22 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/11/03 17:32:02 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/03 18:36:11 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,9 @@ void ScavTrap::attack(const std::string& target)
 	_energy_pts--;
 	std::cout << "ScavTrap " << _name << " attacks "<< target 
 	<< ", causing " << _attack_dmg << " points of damage!\n";
+}
+
+void ScavTrap::guardGate()
+{
+	std::cout << "ScavTrap " << _name << " is in Gate keepper mode.\n";
 }
