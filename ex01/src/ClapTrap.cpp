@@ -6,37 +6,35 @@
 /*   By: daniel149afonso <daniel149afonso@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 22:25:22 by daniel149af       #+#    #+#             */
-/*   Updated: 2025/11/01 18:18:47 by daniel149af      ###   ########.fr       */
+/*   Updated: 2025/11/03 17:33:30 by daniel149af      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "../includes/ClapTrap.hpp"
 
-// Constructors
+// Default Constructor
 ClapTrap::ClapTrap(): _name("unknown"), _hit_pts(10), _energy_pts(10), _attack_dmg(0)
 {
-	std::cout << "Default Constructor called" << std::endl;	
+	std::cout << "ClapTrap Default Constructor called" << std::endl;	
 }
 
-ClapTrap::ClapTrap(std::string name, int hit_pts, int energy_pts, int attack_dmg)
+// Constructor with parameters
+ClapTrap::ClapTrap(std::string name): _name(name), _hit_pts(10), _energy_pts(10), _attack_dmg(0)
 {
-	_name = name;
-	_hit_pts = hit_pts;
-	_energy_pts = energy_pts;
-	_attack_dmg = attack_dmg;
-	std::cout << "Constructor with parameters called" << std::endl;
+	std::cout << "ClapTrap " << _name << " Constructor called" << std::endl;
 }
 
+// Copy constructor
 ClapTrap::ClapTrap(ClapTrap& n)
 {
 	_name= n._name;
 	_hit_pts = n._hit_pts;
 	_energy_pts = n._energy_pts;
 	_attack_dmg = n._attack_dmg;
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap "<< _name << " Constructor called" << std::endl;
 }
-	
-	
+
+// Copy assignement operator
 ClapTrap& ClapTrap::operator=(ClapTrap& n)
 {
 	if (this != &n)
@@ -46,16 +44,17 @@ ClapTrap& ClapTrap::operator=(ClapTrap& n)
 		_energy_pts = n._energy_pts;
 		_attack_dmg = n._attack_dmg;
 	}
-	std::cout << "Copy assignement operator called" << std::endl;
+	std::cout << "ClapTrap " << _name << " assignement operator called" << std::endl;
 	return (*this);
 }
 
 // Destructor
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called"<<std::endl;
+	std::cout << "ClapTrap " << _name << " Destructor called"<<std::endl;
 }
-	
+
+// Public methods
 void ClapTrap::attack(const std::string& target)
 {
 	if (_energy_pts <= 0 || _hit_pts <= 0)
@@ -88,6 +87,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << _name << " repairs +" << _hit_pts << " hit points!\n";
 }
 
+// Getters
 int ClapTrap::get_hit_pts()
 {
 	return(_hit_pts);

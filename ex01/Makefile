@@ -7,7 +7,9 @@ CXX         = c++
 CXXFLAGS    = -Wall -Wextra -Werror -std=c++98
 RM          = rm -f
 
-SRC         = main.cpp ClapTrap.cpp
+DIR = src/
+SRC         = $(DIR)main.cpp $(DIR)ClapTrap.cpp \
+			$(DIR)ScavTrap.cpp
 OBJ         = $(SRC:.cpp=.o)
 
 # **************************************************************************** #
