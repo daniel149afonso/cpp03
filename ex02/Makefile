@@ -12,7 +12,8 @@ OBJ_DIR     = objs
 
 SRC         = $(SRC_DIR)/main.cpp \
               $(SRC_DIR)/ClapTrap.cpp \
-              $(SRC_DIR)/ScavTrap.cpp
+              $(SRC_DIR)/ScavTrap.cpp \
+			  $(SRC_DIR)/FragTrap.cpp
 
 OBJ         = $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
