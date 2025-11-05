@@ -72,7 +72,7 @@ void FragTrap::attack(const std::string& target)
 	<< ", causing " << _attack_dmg << " points of damage!\n";
 }
 
-void FragTrap::highFivesGuys()
+void FragTrap::highFivesGuys(void) const
 {
 	std::cout << "FragTrap " << _name << " does a high Fives.\n";
 }

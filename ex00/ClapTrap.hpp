@@ -36,8 +36,8 @@ class ClapTrap {
 		void beRepaired(unsigned int amount);
 
 		// Getters
-		int get_hit_pts();
-		int get_energy_pts();
+		int get_hit_pts() const;
+		int get_energy_pts() const;
 };
 
 #endif

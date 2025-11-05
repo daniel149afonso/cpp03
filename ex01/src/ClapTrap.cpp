@@ -88,11 +88,11 @@ void ClapTrap::beRepaired(unsigned int amount)
 }
 
 // Getters
-int ClapTrap::get_hit_pts()
+int ClapTrap::get_hit_pts() const
 {
 	return(_hit_pts);
 }
-int ClapTrap::get_energy_pts()
+int ClapTrap::get_energy_pts() const
 {
 	return(_energy_pts);
 }

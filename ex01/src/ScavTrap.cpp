@@ -70,7 +70,7 @@ void ScavTrap::attack(const std::string& target)
 	<< ", causing " << _attack_dmg << " points of damage!\n";
 }
 
-void ScavTrap::guardGate()
+void ScavTrap::guardGate() const
 {
 	std::cout << "ScavTrap " << _name << " is in Gate keepper mode.\n";
 }
